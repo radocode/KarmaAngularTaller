@@ -10,4 +10,10 @@ describe('RemoveAPipe', () => {
     const pipe = new RemoveAPipe();
     expect(pipe.transform('hola')).toBe('hol');
   });
+
+
+  it('should be null', () => {
+    const pipe = new RemoveAPipe();
+    expect(pipe.transform(null)).toBeNull();
+  });
 });

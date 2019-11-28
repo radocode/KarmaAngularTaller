@@ -19,4 +19,14 @@ describe('TestService', () => {
     const service: TestService = TestBed.get(TestService);
     expect(service.mandarMensajeMayusculas('chao')).toBe('BYE');
   });
+
+  it('should send a null', () => {
+    const service: TestService = TestBed.get(TestService);
+    expect(service.mandarMensajeMayusculas(null)).toBe('cerveza');
+  });
+
+  it('should send CAPS', () => {
+    const service: TestService = TestBed.get(TestService);
+    expect(service.mandarMensajeMayusculas('TESTING')).toEqual('TESTING');
+  });
 });

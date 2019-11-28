@@ -8,6 +8,11 @@ export class TestService {
   constructor() { }
 
   mandarMensajeMayusculas(msj: string) {
-    return msj === 'chao' ? 'BYE' : msj.toLocaleUpperCase();
+    try {
+
+      return msj === 'chao' ? 'BYE' : msj.toLocaleUpperCase();
+    } catch (error) {
+      return 'cerveza';
+    }
   }
 }

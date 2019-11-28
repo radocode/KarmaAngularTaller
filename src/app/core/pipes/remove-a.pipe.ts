@@ -6,7 +6,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class RemoveAPipe implements PipeTransform {
 
   transform(value: string, ...args: any[]): any {
-    return value.toLowerCase().replace('a', '');
+    try {
+      return value.toLowerCase().replace('a', '');
+    } catch (error) {
+      return null;
+    }
   }
 
 }

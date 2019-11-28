@@ -9,9 +9,9 @@ describe('TestCompoComponent', () => {
   // esto se ejecutara siempre antes de una prueba (o un "it"), pero asincronamente
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TestCompoComponent ]
+      declarations: [TestCompoComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   // esto se ejecutara siempre antes de una prueba (o un "it"), la idea es refrescar el fixture a probar
