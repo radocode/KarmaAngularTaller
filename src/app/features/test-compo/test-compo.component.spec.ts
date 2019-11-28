@@ -33,13 +33,6 @@ describe('TestCompoComponent', () => {
     expect(component.suma(1, null)).not.toBe(2);
   });
 
-
-  // it('should check for title app OK', () => {
-  //   const app = fixture.debugElement.componentInstance;
-  //   console.log(app.title);
-  //   expect(app.title).toEqual('KarmaTest1');
-  // });
-
   it('should check for divPrueba OK', () => {
     // esto permite a karma saber si el componente ha cambiado durante la prueba, siempre ejecutar!
     fixture.detectChanges();
