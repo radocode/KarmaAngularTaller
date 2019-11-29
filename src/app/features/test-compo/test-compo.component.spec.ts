@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { of } from 'rxjs';
 import { TestCompoComponent } from './test-compo.component';
+import { TestService } from 'src/app/core/services/test.service';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 describe('TestCompoComponent', () => {
   let component: TestCompoComponent;
@@ -9,7 +12,14 @@ describe('TestCompoComponent', () => {
   // esto se ejecutara siempre antes de una prueba (o un "it"), pero asincronamente
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [TestCompoComponent]
+      imports: [HttpClientTestingModule],
+      declarations: [TestCompoComponent],
+      providers: [
+        {
+          provide: TestService,
+          useClass: FakeApiService,
+        },
+      ],
     })
       .compileComponents();
   }));
@@ -48,4 +58,25 @@ describe('TestCompoComponent', () => {
 
     expect(compiled.querySelector('p').textContent).not.toContain('contenido div');
   });
+
+  it('should check on wiki service', () => {
+    // arrange
+    const service = TestBed.get(TestService);
+    const spyOnMethod = spyOn(service, 'search').and.callThrough();
+    // act
+    component.ngOnInit();
+    // assert
+    expect(spyOnMethod).toHaveBeenCalled();
+  });
 });
+
+class FakeApiService {
+  // Implement the methods you want to overload here
+  search() {
+    return of({ items: ['completo', 'italiano'] }); // * mocks the return of the real method
+  }
+
+  mandarMensajeMayusculas() {
+    return 'HOLA';
+  }
+}

@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TestCompoComponent } from './features/test-compo/test-compo.component';
 import { RemoveAPipe } from './core/pipes/remove-a.pipe';
+import { HttpClientModule } from '@angular/common/http';
+import { TestService } from './core/services/test.service';
 
 @NgModule({
   declarations: [
@@ -14,9 +16,10 @@ import { RemoveAPipe } from './core/pipes/remove-a.pipe';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [TestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

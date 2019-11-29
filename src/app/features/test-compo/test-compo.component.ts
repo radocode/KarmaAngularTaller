@@ -12,6 +12,11 @@ export class TestCompoComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.testService.mandarMensajeMayusculas('hola'));
+    this.testService.search('hot dog').subscribe(response => {
+      console.log(response);
+    }, error => {
+      console.log(error);
+    });
   }
 
   suma(num1: number, num2: number) {
