@@ -2,13 +2,13 @@
 
 Link presentacion: https://docs.google.com/presentation/d/11CtLwolwYOxnrNc-_lzYTqeE90268oNivQfJL-AeffU/edit?usp=sharing
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.12.
-
 ## Notas adicionales
 
 Lectura complementaria, muy recomendada: Cheatsheet
 
 <https://dev.to/mustapha/angular-unit-testing-101-with-examples-6mc>
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.12.
 
 ## Development server
 
