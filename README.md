@@ -1,5 +1,7 @@
 # Taller Karma Angular
 
+Link presentacion: https://docs.google.com/presentation/d/11CtLwolwYOxnrNc-_lzYTqeE90268oNivQfJL-AeffU/edit?usp=sharing
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.12.
 
 ## Notas adicionales
